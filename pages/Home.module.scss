@@ -1,0 +1,128 @@
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 70vh;
+  background: rgb(255, 254, 252);
+  background: linear-gradient(rgb(255 255 255 / 69%), rgb(255 255 255 / 53%)), url(/img/hero-bk.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 84%);
+  box-sizing: border-box; /* does not allow to add borders */
+
+  @media (max-width: 900px) {
+    height: 100%;
+  }
+
+  &-cta {
+    display: flex;
+
+    & span {
+      font-size: 1.5rem;
+      color: (var(--secondary));
+    }
+
+    & h2 {
+      font-size: 50px;
+      color: (var(--primary));
+    }
+
+    @media (max-width: 900px) {
+      // padding: 3rem;
+      // flex-direction: column !important;
+      // flex-direction: column-reverse;
+    }
+
+    &__left img {
+      width: 80%;
+    }
+  }
+}
+
+.section-about {
+  text-align: center;
+  margin: 7rem auto;
+
+  & h2 {
+    color: (var(--secondary));
+    margin-bottom: 2rem;
+  }
+
+  & hr {
+    margin: 5rem 0;
+  }
+}
+
+.section-contribute {
+  text-align: center;
+  margin: 7rem auto;
+
+  & img {
+    margin-top: 2rem;
+  }
+
+  & h5 {
+    width: 70%;
+    margin: 2rem auto;
+  }
+}
+
+.section-1__articles {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 5rem;
+  margin-bottom: 7rem;
+}
+
+.section-links {
+  background-color: (var(--primary));
+  height: 100%;
+  padding: 10rem 0;
+  clip-path: polygon(0 0, 100% 13%, 100% 100%, 0% 100%);
+  
+  li {
+    margin: 2rem 0;
+  }
+
+  h3 {
+    color: var(--secondary);
+    margin-bottom: 3rem;
+  }
+  
+  h5,span {
+    color: var(--white);
+  }
+
+
+  a {
+    color: var(--white);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--secondary);
+    }
+  }
+
+  & .section-links__articles {
+    display: flex;
+    // justify-content: center;
+    // flex-wrap: wrap;
+    // margin: 4rem 0;
+  }
+
+  & .section-2__articles-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 300px;
+    padding: 0 30px;
+    font-weight: 600;
+  }
+
+  & img {
+    margin: 2rem;
+  }
+}

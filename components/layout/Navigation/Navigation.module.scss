@@ -1,0 +1,36 @@
+.contact-nav {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  height: 1.5rem;
+  padding: 0 14%;
+  color: #666;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  border-bottom: 0.5px #9999 solid;
+
+  a {
+    text-decoration: none;
+    color: (var(--secondary-solid));
+  }
+  @media (max-width: 600px) {
+    text-align: center;
+    padding: 5px;
+    font-size: 9px;
+    display: block;
+  }
+}
+
+.navbar-custom {
+  background-color: transparent;
+  font-size: 14px;
+
+  &::before {
+    position: absolute;
+    height: 20px;
+    content: '';
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
+}

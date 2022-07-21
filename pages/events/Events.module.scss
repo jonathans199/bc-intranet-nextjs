@@ -1,0 +1,10 @@
+.events {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+
+  @media (max-width: 900px) {
+    margin-top: 7rem;
+  }
+}

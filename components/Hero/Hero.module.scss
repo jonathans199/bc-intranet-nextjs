@@ -1,0 +1,81 @@
+// @import './../../styles/main.scss';
+
+@mixin hero-styles {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 300px;
+
+  @media (max-width: 900px) {
+    display: block;
+    height: 200px;
+
+    h1 {
+      font-size: 25px;
+    }
+
+    h3 {
+      font-size: 20px;
+    }
+  }
+}
+
+.hero {
+  background-size: cover;
+  background-position-y: 50%;
+  margin-bottom: 4rem;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: lightgray;
+
+  h1 {
+    font-weight: 700;
+  }
+
+  &__heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--primary-transparent);
+    width: 550px;
+    height: 150px;
+    line-height: 150px;
+    color: white;
+    position: relative;
+    padding-left: 3rem;
+
+    &::before {
+      content: '';
+      width: 0px;
+      height: 0px;
+      border-top: 150px solid var(--primary-transparent);
+      border-right: 150px solid transparent;
+      position: absolute;
+      left: 100%;
+      top: 0;
+    }
+
+    @media (max-width: 900px) {
+      height: 100px;
+      width: 100%;
+      top: 100%;
+
+      &::before {
+        content: none;
+      }
+    }
+  }
+}
+
+.hero-news {
+  @include hero-styles;
+  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 0%, transparent 70%),
+    url('/img/sponsors/sponsors-bk.jpeg');
+}
+
+.hero-events {
+  @include hero-styles;
+  background-position-y: 80%;
+  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 0%, transparent 70%),
+    url('https://www.techlondonadvocates.org.uk/wp-content/uploads/2018/04/TLA_WEBDESIGN_EVENTS-BANNER.jpg');
+}

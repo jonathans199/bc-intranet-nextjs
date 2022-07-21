@@ -1,0 +1,23 @@
+@import 'variables';
+@import '~react-image-gallery/styles/scss/image-gallery.scss';
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+h2 {
+  color: (var(--secondary));
+  margin-bottom: 2rem;
+}
+
+.image-gallery {
+  @media (max-width: 900px) {
+    width: 100%;
+  }
+}
+
+.custom-gallery {
+  @media (max-width: 900px) {
+    margin-top: 7rem;
+  }
+}

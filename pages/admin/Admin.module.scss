@@ -1,0 +1,9 @@
+.admin {
+  &-info {
+    margin-top: 3rem;
+
+    @media (max-width: 900px) {
+      margin-top: 7rem;
+    }
+  }
+}

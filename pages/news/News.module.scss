@@ -1,0 +1,26 @@
+.fiesta {
+  &-info {
+    margin-top: 3rem;
+
+    @media (max-width: 900px) {
+      margin-top: 7rem;
+    }
+  }
+}
+
+.admin {
+  background-color: white;
+  border: none;
+  color: white;
+}
+
+.events {
+  // display: flex;
+  // justify-content: space-evenly;
+  // align-items: center;
+  // flex-wrap: wrap;
+
+  @media (max-width: 900px) {
+    margin-top: 7rem;
+  }
+}
