@@ -1,5 +1,5 @@
 {
-  "name": "marinera-en-el-mundo-florida",
+  "name": "bc-intranet-nextjs",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -23,6 +23,7 @@
     "sass": "^1.42.1"
   },
   "devDependencies": {
+    "@netlify/plugin-nextjs": "^4.12.2",
     "@types/react": "17.0.24",
     "@types/react-image-gallery": "^1.0.5",
     "eslint": "7.32.0",
