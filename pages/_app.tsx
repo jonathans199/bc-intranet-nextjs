@@ -6,7 +6,6 @@ import { getAuth, onAuthStateChanged, User } from 'firebase/auth'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import '../styles/main.scss'
-import styles from './Home.module.scss'
 
 import Layout from './../components/layout'
 
@@ -38,6 +37,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <UserContext.Provider value={{ user, setUser }}>
       <main>
         <Layout>
+          {/* @ts-ignore */}
           <Component {...pageProps} />
         </Layout>
       </main>
