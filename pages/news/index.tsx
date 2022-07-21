@@ -6,12 +6,11 @@ import ImageGallery from 'react-image-gallery'
 import { UserContext } from '../_app'
 import { Hero } from '../../components/Hero'
 import styles from './News.module.scss'
-import { Card, CardGroup, Button, Image } from 'react-bootstrap'
 import ImageUploader from '../../components/ImageUploader/ImageUploader'
 
 const event = 'news'
 
-export default function Fiesta() {
+export default function News() {
   const { user } = React.useContext(UserContext)
   const [gallery, setGallery] = React.useState<String[]>([])
 
@@ -36,7 +35,7 @@ export default function Fiesta() {
   return (
     <>
       <Hero heading='News' subHeading='Boca Code &amp; tech events' type='news' />
-      <section className={`${styles['fiesta-info']} container`}>
+      <section className={`${styles['news-info']} container`}>
         <h1>Tech Events</h1>
         <p>When, where and whats happening in tech in South Florida</p>
         <code>#tech, #bitcoin, #developers</code>

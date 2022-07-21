@@ -15,7 +15,7 @@ const Restaurants = ({ allRestaurants }) => {
 
   return (
     <>
-      <Hero heading='Restaurants' subHeading='Near by recommended restaurants' type='news' />
+      <Hero heading='Restaurants' subHeading='Near by recommended restaurants' type='restaurants' />
       <button onClick={handleShow} className={`btn ${styles['addrest-btn']}`}>
         Add Restaurant
       </button>
