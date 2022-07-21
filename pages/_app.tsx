@@ -37,7 +37,6 @@ function MyApp({ Component, pageProps }: AppProps) {
     <UserContext.Provider value={{ user, setUser }}>
       <main>
         <Layout>
-          {/* @ts-ignore */}
           <Component {...pageProps} />
         </Layout>
       </main>
