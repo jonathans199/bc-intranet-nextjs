@@ -37,14 +37,22 @@ export default function Navigation() {
               <Nav.Link href='events'>EVENTS</Nav.Link>
               <Nav.Link href='/#links'>LINKS</Nav.Link>
 
-              {user ? <Nav.Link onClick={logOutUser}>LOGOUT</Nav.Link> : <Nav.Link onClick={() => setOpenModal(true)}>LOGIN</Nav.Link>}
+              <NavDropdown title='AROUND BC' id='nav-dropdown'>
+                <NavDropdown.Item href='restaurants'>RESTAURANTS</NavDropdown.Item>
 
+                <NavDropdown.Divider />
+                <span className='mx-2 text-warning'>COMMING SOON </span>
+                <NavDropdown.Item href='#'>PARKS</NavDropdown.Item>
+                <NavDropdown.Item href='#'>CAFES</NavDropdown.Item>
+                <NavDropdown.Item href='#'>SHOPPING</NavDropdown.Item>
+              </NavDropdown>
+              {user ? <Nav.Link onClick={logOutUser}>LOGOUT</Nav.Link> : <Nav.Link onClick={() => setOpenModal(true)}>LOGIN</Nav.Link>}
               <NavDropdown title='STUDENTS ONLY' id='nav-dropdown'>
                 <NavDropdown.Item href='restaurants'>RESTAURANTS</NavDropdown.Item>
 
                 <NavDropdown.Divider />
                 <span className='mx-3 text-warning'>COMMING SOON </span>
-                <NavDropdown.Item href='#action/3.1'>CODE CHALLENGES</NavDropdown.Item>
+                <NavDropdown.Item href='#'>CODE CHALLENGES</NavDropdown.Item>
 
                 <NavDropdown.Item href='#'>PHOTOS</NavDropdown.Item>
                 <NavDropdown.Item href='#'>LABS</NavDropdown.Item>

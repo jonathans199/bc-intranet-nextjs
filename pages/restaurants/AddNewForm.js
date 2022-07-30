@@ -10,7 +10,7 @@ export default function AddNewForm({ handleClose, newRestaurant, setNewRestauran
     if (newRestaurant.photoUrl && newRestaurant.name && newRestaurant.rating) setFormReady(true)
   }, [newRestaurant])
 
-  const uploadImage = async (image) => {
+  const uploadImage = async image => {
     try {
       const imageUpload = await storage.ref(`/restaurants/${image.name}`).put(image)
 
@@ -27,14 +27,14 @@ export default function AddNewForm({ handleClose, newRestaurant, setNewRestauran
     event.preventDefault()
 
     if (formReady) {
-      fetch(`${process.env.REACT_APP_API_ENDPOINT}/restaurants/`, {
+      fetch(`https://bocacode-intranet-api.web.app/restaurants`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(newRestaurant),
       })
-        .then((response) => {
+        .then(response => {
           if (response.status === 200) {
             alert('Restaurant was created properly')
             handleClose()
@@ -42,55 +42,41 @@ export default function AddNewForm({ handleClose, newRestaurant, setNewRestauran
             alert(response.status)
           }
         })
-        .catch((err) => console.error(err))
+        .catch(err => console.error(err))
     }
   }
 
   return (
     <>
-      <Form.Group as={Row} controlId="formHorizontalEmail">
+      <Form.Group as={Row} controlId='formHorizontalEmail'>
         <Form.Label column sm={4}>
           Restaurant Name:
         </Form.Label>
         <Col sm={7}>
-          <Form.Control
-            type="text"
-            name="name"
-            onChange={(event) => setNewRestaurant({ ...newRestaurant, name: event.target.value })}
-          />
+          <Form.Control type='text' name='name' onChange={event => setNewRestaurant({ ...newRestaurant, name: event.target.value })} />
         </Col>
         <Form.Label column sm={4}>
           Address:
         </Form.Label>
         <Col sm={7}>
-          <Form.Control
-            type="text"
-            name="address"
-            onChange={(event) => setNewRestaurant({ ...newRestaurant, address: event.target.value })}
-          />
+          <Form.Control type='text' name='address' onChange={event => setNewRestaurant({ ...newRestaurant, address: event.target.value })} />
         </Col>
         <Form.Label column sm={4}>
           Rating:
         </Form.Label>
         <Col sm={7}>
-          <Form.Control
-            type="text"
-            name="rating"
-            onChange={(event) => setNewRestaurant({ ...newRestaurant, rating: event.target.value })}
-          />
+          <Form.Control type='text' name='rating' onChange={event => setNewRestaurant({ ...newRestaurant, rating: event.target.value })} />
         </Col>
         <Form.Label column sm={4}>
           Photo:
         </Form.Label>
         <Col sm={7}>
-          <Form.Control type="file" name="photoUrl" onChange={(event) => uploadImage(event.target.files[0])} />
+          <Form.Control type='file' name='photoUrl' onChange={event => uploadImage(event.target.files[0])} />
         </Col>
       </Form.Group>
 
-      <div className="createRest">
-        <Button onClick={handleSubmit} disabled={!formReady}>
-          Create Restaurant
-        </Button>
+      <div className='createRest'>
+        <Button onClick={handleSubmit}>Create Restaurant</Button>
       </div>
     </>
   )

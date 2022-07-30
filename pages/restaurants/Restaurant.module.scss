@@ -11,17 +11,51 @@
 .main-container-for-cards {
   display: flex;
   flex-wrap: wrap;
+
+  &--restaurant-spinner-outer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1450px;
+    height: 200px;
+  }
+
+  &--restaurant-spinner {
+    width: 10rem;
+    height: 10rem;
+  }
+}
+
+.restaurant_card--container {
+  height: 400px;
+  width: 291px;
+  // border: 2px solid #efefef;
+  perspective: 1000px;
+}
+
+.restaurant_card--flip {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 2s;
+  transform-style: preserve-3d;
+}
+
+.restaurant_card--container:hover .restaurant_card--flip {
+  transform: rotateY(180deg);
 }
 
 .restaurant_card {
+  position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-height: 400px;
-  width: 291px;
+  height: 100%;
+  width: 100%;
   border-width: 5px;
   border-radius: 20px;
   background-color: #272262;
+  backface-visibility: hidden;
 
   &--link {
     text-decoration: none;
@@ -62,5 +96,90 @@
     color: white;
     font-size: 1.5em;
     height: 40px;
+  }
+}
+
+.restaurant_card--back {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  border-width: 5px;
+  border-radius: 20px;
+  background-color: #272262;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+
+  &--text--back {
+    padding-top: 45px;
+    margin: 0 0 15% 15%;
+    color: #efefef;
+    font-size: 1.5em;
+    height: 42px;
+  }
+
+  &--text--address {
+    padding-top: 30px;
+    margin: 0 0 15% 15%;
+    color: #efefef;
+    font-size: 1em;
+    height: 30px;
+  }
+
+  &--text--phone {
+    padding-top: 50px;
+    margin: 0 0 10% 15%;
+    color: #efefef;
+    font-size: 0.8em;
+    height: 20px;
+  }
+
+  &--text--hours {
+    padding-top: 0px;
+    margin: 0 0 10% 15%;
+    color: #efefef;
+    font-size: 0.8em;
+    height: 20px;
+  }
+
+  &--text--rating {
+    padding-top: 10px;
+    padding-left: 140px;
+    margin: 10% 10% 0% 10%;
+    color: #efefef;
+    font-size: 0.8em;
+    height: 20px;
+  }
+
+  &--button {
+    background-color: #ff216d;
+    // float: right;
+    color: #efefef;
+    padding: 0px 10px;
+    margin: 1rem 1rem 2rem 2.2rem;
+    font-size: 17px;
+    font-weight: 400;
+    border-radius: 20px;
+    border-color: #272262;
+  }
+
+  &--body--back {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 5px;
+    z-index: 3;
+  }
+}
+
+@media (max-width: 575px) {
+  .main-container-for-cards {
+    justify-content: center;
   }
 }

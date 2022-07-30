@@ -156,20 +156,22 @@ const Home: NextPage = () => {
       <section className={`container ${styles['section-about']}`} id='about'>
         <h2>Active Contributors</h2>
         <p>
-          <strong>Spring 2022 Cohort:</strong>
-          <p>Arthur Silva, Maria Bruno, Neil , Josh Philip, Carlie Duperval, Ludwingson Morisseau</p>
+          <strong>Cohort 6 - 2022:</strong>
+          <p>
+            Arthur Silva, Maria Bruno, Ann Starovoitov, Josh Philip, Carlie Duperval, Ludwingson Morisseau, Neil Bennett, Miguel Gomez, Anneer Fidalgo
+          </p>
           <strong>Fall 2021 Cohort:</strong>
           <br />
           Peter Lewandowski
         </p>
-        <strong>Leads: </strong> 
+        <strong>Leads: </strong>
         <p>Matthew McKney, Peter Lewandowski</p>
         <p>Thank you for all your efforts</p>
         <hr />
         <h2>Past Contributors</h2>
-        <strong>Fall 2021 Cohort:</strong>
+        <strong>Cohort 5 - 2021:</strong>
         <br />
-        Ashley 
+        Ashley Dennis, Danielle Kom, Deyvin Cano,
       </section>
     </div>
   )
