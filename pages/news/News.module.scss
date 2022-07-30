@@ -1,16 +1,124 @@
-.news {
-  &-info {
-    margin-top: 3rem;
+.btn-add-article {
+  margin: auto auto 1.5rem 1.2rem;
+  background-color: #ff216d;
+}
 
-    @media (max-width: 900px) {
-      margin-top: 7rem;
-    }
+.news-card {
+  background-color: #ffffff;
+  border: 2.7px solid #272262;
+  border-radius: 0.75rem;
+  margin: 2%;
+  padding: 1.5%;
+  box-shadow: 5px 4px 3px rgb(92, 89, 89);
+  & .news-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* number of lines to show */
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
   }
 }
 
-.admin {
-  background-color: white;
-  border: none;
-  color: white;
+.news-click {
+  text-decoration: none;
+  color: black;
+  margin: 2%;
 }
 
+#news_header2 {
+  color: #272262;
+}
+#news_header6 {
+  color: #ff216d;
+}
+#news_header3 {
+  color: #ff216d;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: 100;
+  font-size: medium;
+}
+
+
+.news-heading-2 {
+  display: flex;
+  justify-content: space-between;
+
+  & .news-author {
+    font-weight: 100;
+    font-size: 15px;
+    color: #ff216d;
+  }
+
+  & .news-date {
+    font-weight: 100;
+    font-size: 15px;
+    color: #ff216d;
+  }
+
+  & .boxes {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+  }
+
+  & .box-1 {
+    height: 23px;
+    width: 50px;
+    background-color: #272262;
+    text-align: center;
+    font-size: 15px;
+    color: #ffffff;
+    margin-right: 20px;
+  }
+
+  & .box-2 {
+    height: 23px;
+    width: 60px;
+    background-color: #272262;
+    text-align: center;
+    font-size: 15px;
+    color: #ffffff;
+    margin-right: 20px;
+  }
+
+  & .box-3 {
+    height: 23px;
+    width: 60px;
+    background-color: #272262;
+    text-align: center;
+    font-size: 15px;
+    color: #ffffff;
+    margin-right: 20px;
+  }
+}
+
+.news-image {
+  margin-top: 5px;
+
+  & .news-pic {
+    display: block;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 600px;
+  }
+
+  & hr {
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 2px;
+    background-color: #ff216d;
+    opacity: 1;
+  }
+}
+
+.news-body {
+  text-indent: 20px;
+  margin-top: 20px;
+  margin-left: 300px;
+  margin-right: 300px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: 600px;
+}
