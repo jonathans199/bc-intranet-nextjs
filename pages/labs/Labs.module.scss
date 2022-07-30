@@ -1,0 +1,37 @@
+.btn-add-article {
+  margin: auto auto 1.5rem 1.2rem;
+  background-color: #ff216d;
+}
+
+.labs-card {
+  background-color: #ffffff;
+  border: 2.7px solid #272262;
+  border-radius: 0.75rem;
+  margin: 2%;
+  padding: 1.5%;
+  box-shadow: 5px 4px 3px rgb(92, 89, 89);
+  & .labs-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* number of lines to show */
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+}
+
+.labs_header2 {
+  color: #272262;
+}
+.labs_header4 {
+  color: limegreen;
+}
+.labs_header6 {
+  color: #ff216d;
+}
+.labs_header3 {
+  color: #ff216d;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: 100;
+  font-size: medium;
+}

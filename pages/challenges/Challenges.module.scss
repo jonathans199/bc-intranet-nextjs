@@ -1,0 +1,356 @@
+.coding-challenges--button {
+  width: 200px;
+  height: 60px;
+  margin: 3rem 0 3rem 1rem;
+  border-radius: 11px;
+  background-color: #ff216c;
+  color: #f5f5f5;
+  border: none;
+}
+
+.coding-challenges--wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.coding-challenges-card {
+  width: 640px;
+  min-height: 181px;
+  height: 220px;
+  margin: 1.5rem 0 1.5rem 0.8rem;
+  padding-left: 0.4rem;
+  border-radius: 25px;
+  border: 2px solid #333;
+
+  &--img {
+    position: absolute;
+    width: 98%;
+    height: 100%;
+    background-image: url('/img/binaryCode.png');
+    background-repeat: repeat-x repeat-y;
+    opacity: 0.1;
+  }
+
+  &--link {
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  &--header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: transparent;
+    border: none;
+  }
+  &--title {
+    display: flex;
+    align-items: flex-start;
+    padding-top: 0.7rem;
+    font-size: 1.875rem;
+    font-weight: bold;
+  }
+  &--level {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 1.25rem;
+    color: #333;
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  &--problem {
+    font-size: 1.125em;
+    line-height: 1.25;
+    font-weight: bold;
+  }
+}
+
+@media (min-width: 1081px) and (max-width: 1200px) {
+  .coding-challenges--button {
+    width: 200px;
+    margin-left: 1rem;
+    margin-bottom: 0.1rem;
+  }
+  .coding-challenges-card {
+    &--title {
+      max-width: 180px;
+      font-size: 1.4rem;
+    }
+    &--level {
+      max-width: 250px;
+      padding-top: 0.8rem;
+      font-size: 1.15rem;
+    }
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1080px) {
+  .coding-challenges--button {
+    width: 200px;
+    margin-left: 1rem;
+    margin-bottom: 0.1rem;
+  }
+  .coding-challenges-card {
+    &--title {
+      max-width: 250px;
+      font-size: 1.4rem;
+    }
+    &--level {
+      max-width: 150px;
+      padding-left: 2.8rem;
+      font-size: 1.12rem;
+    }
+    &--problem {
+      line-height: 1.35;
+      font-size: 1.03rem;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .coding-challenges--button {
+    width: 200px;
+    margin-left: 1rem;
+    margin-bottom: 0.1rem;
+  }
+  .coding-challenges-card {
+    &--title {
+      padding-top: 1rem;
+      font-size: 1.4rem;
+    }
+    &--level {
+      max-width: 250px;
+      padding-left: 2.8rem;
+      font-size: 1.2rem;
+    }
+    &--problem {
+      line-height: 1.35;
+      font-size: 1.12rem;
+    }
+  }
+}
+
+@media (max-width: 948px) {
+  .coding-challenges--button {
+    width: 180px;
+    margin-left: 1rem;
+    margin-bottom: 0.1rem;
+  }
+  .coding-challenges-card {
+    max-height: 200px;
+
+    &--title {
+      padding-top: 1rem;
+      font-size: 1.5rem;
+    }
+    &--level {
+      max-width: 300px;
+      font-size: 1.35rem;
+    }
+    &--problem {
+      font-size: 1.15rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .coding-challenges--button {
+    width: 180px;
+    margin-left: 0.3rem;
+    margin-bottom: 0.5rem;
+  }
+  .coding-challenges-card {
+    max-height: 300px;
+    margin: 1rem 0.1rem;
+
+    &--title {
+      font-size: 1.4rem;
+    }
+    &--level {
+      max-width: 200px;
+      padding-left: 3.6rem;
+      font-size: 1.15rem;
+    }
+    &--problem {
+      line-height: 1.35;
+      font-size: 1.1rem;
+    }
+  }
+}
+
+@media (min-width: 460px) and (max-width: 679px) {
+  .coding-challenges--button {
+    width: 100%;
+    margin-left: -0.01rem;
+    margin-bottom: 1rem;
+  }
+  .coding-challenges-card {
+    width: 100%;
+    margin: 0.5rem auto;
+
+    &--title {
+      padding-top: 1.2rem;
+      font-size: 1.3rem;
+    }
+    &--level {
+      font-size: 1.1rem;
+    }
+    &--problem {
+      line-height: 1.35;
+      font-size: 1.15rem;
+    }
+  }
+}
+
+@media (min-width: 375px) and (max-width: 414px) {
+  .coding-challenges--button {
+    width: 100%;
+  }
+  .coding-challenges-card {
+    width: 100%;
+    height: 100%;
+    margin: 2% auto;
+    padding: 0 0.15rem;
+
+    &--title {
+      min-width: 150px;
+      max-width: 170px;
+      padding-top: 1.2rem;
+      font-size: 1.3rem;
+    }
+    &--level {
+      min-width: 200px;
+      margin-left: -2rem;
+      line-height: 1.5;
+      font-size: 1.15rem;
+    }
+    &--problem {
+      // max-width: 400px;
+      line-height: 1.5;
+      font-size: 1.05rem;
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .coding-challenges--button {
+    width: 100%;
+  }
+  .coding-challenges-card {
+    width: 100%;
+    height: 100%;
+    margin: 0.04rem;
+
+    &--title {
+      min-width: 140px;
+      max-width: 190px;
+      font-size: 1.3rem;
+    }
+
+    &--level {
+      min-width: 200px;
+      margin-top: -0.2rem;
+      margin-left: -2.5rem;
+      line-height: 1.5;
+      font-size: 1.15rem;
+    }
+
+    &--problem {
+      line-height: 1.5;
+      font-size: 1.09rem;
+    }
+  }
+}
+
+.coding-challenge {
+  width: 1250px;
+  height: 1030px;
+  margin: 5rem 6rem;
+  border: 2px solid #333;
+  border-radius: 15px;
+}
+
+.challenge-detail {
+  width: 630px;
+  padding: 3.5rem 0 0 1.4rem;
+
+  & h1 {
+    padding-left: 0.8rem;
+    color: #272262;
+    font-size: 2.1rem;
+    line-height: 1;
+    font-weight: bold;
+  }
+
+  & h2 {
+    padding-left: 0.8rem;
+    color: #ff216c;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  & h3 {
+    padding-top: 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  & hr {
+    height: 0.12rem;
+    width: 100%;
+    background: #ff216c;
+  }
+
+  & p {
+    padding-bottom: 1rem;
+    padding-left: 0.8rem;
+    padding-right: 0.5rem;
+    font-weight: bold;
+  }
+
+  & pre {
+    height: 74px;
+    padding: 0.9rem 1.25rem;
+    background-color: #d5d5d5;
+  }
+}
+
+.challenge-hints {
+  &--accordion {
+    width: 610px;
+    margin: 2.5rem auto;
+    border-style: hidden !important;
+  }
+  &--header {
+    background-color: transparent;
+    border-bottom: 2px solid #272262;
+    // height: 100%;
+  }
+}
+
+.coding-practice {
+  width: 534px;
+  height: 857px;
+  margin: 3.5rem 0 0 -3.5rem;
+  border: 2px solid #333;
+  border-radius: 27px;
+  &--background {
+    width: 98%;
+    height: 100%;
+    margin: 0 auto;
+    background-image: url('/img/binaryCode.png');
+    background-size: 100%;
+    background-repeat: repeat-y;
+    opacity: 0.1;
+  }
+  &__cta--btn {
+    width: 110px;
+    height: 35px;
+    margin: 1rem 2rem;
+    background-color: #ff216c;
+    color: #f5f5f5;
+    border-radius: 10px;
+    border: none;
+  }
+}

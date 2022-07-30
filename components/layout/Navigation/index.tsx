@@ -48,14 +48,13 @@ export default function Navigation() {
               </NavDropdown>
               {user ? <Nav.Link onClick={logOutUser}>LOGOUT</Nav.Link> : <Nav.Link onClick={() => setOpenModal(true)}>LOGIN</Nav.Link>}
               <NavDropdown title='STUDENTS ONLY' id='nav-dropdown'>
-                <NavDropdown.Item href='restaurants'>RESTAURANTS</NavDropdown.Item>
+                <NavDropdown.Item href='/labs'>LABS</NavDropdown.Item>
+                <NavDropdown.Item href='/challenges'>CODE CHALLENGES</NavDropdown.Item>
 
                 <NavDropdown.Divider />
                 <span className='mx-3 text-warning'>COMMING SOON </span>
-                <NavDropdown.Item href='#'>CODE CHALLENGES</NavDropdown.Item>
 
                 <NavDropdown.Item href='#'>PHOTOS</NavDropdown.Item>
-                <NavDropdown.Item href='#'>LABS</NavDropdown.Item>
                 <NavDropdown.Item href='#'>HOMEWORK</NavDropdown.Item>
                 <NavDropdown.Item href='#'>JOBS</NavDropdown.Item>
               </NavDropdown>
