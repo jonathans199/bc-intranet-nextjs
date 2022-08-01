@@ -64,9 +64,9 @@ export default function LabsList() {
             <li>Create a variable title falseIsNotGood and set it to boolean false.</li>
             <li>console.log(truthIsOutThere + falseIsNotGood)</li>
             <div>Pop Quiz Hotshot:</div> Explain the result 14
-            <li>Solve the following to create the result "JohnCandleWick"</li>
-            <li>let nameFirst = "John"</li>
-            <li>let nameMiddle = "Candle"</li>
+            <li>Solve the following to create the result &#34;JohnCandleWick&#34;</li>
+            <li>let nameFirst = &#34;John&#34;</li>
+            <li>let nameMiddle = &#34;Candle&#34;</li>
             <li>let nameLast = Wick </li>
             <li> let nameFull = nameFirst + nameMiddle + nameLast</li>
             <li>Console.log(nameFull)</li>
@@ -79,8 +79,8 @@ export default function LabsList() {
         <p className={styles['labs-text']}>
           <ol>
             <li>Write a function named helloWorld that:</li>
-            <li>- takes 1 argument, a language code (e.g. "es", "de", "en")</li>
-            <li>- returns "Hello, World" for the given language, for at least 3 languages. It should default to returning English.</li>
+            <li>- takes 1 argument, a language code (e.g. &#34;es&#34;, &#34;de&#34;, &#34;en&#34;)</li>
+            <li>- returns &#34;Hello, World&#34; for the given language, for at least 3 languages. It should default to returning English.</li>
             <li>Call that function for each of the supported languages and log the result to make sure it works.</li>
           </ol>
         </p>
@@ -92,7 +92,7 @@ export default function LabsList() {
           <ol>
             <li>Write a function named assignGrade that:</li>
             <li> takes 1 argument, a number score.</li>
-            <li> returns a grade for the score, either "A", "B", "C", "D", or "F".</li>
+            <li> returns a grade for the score, either &#34;A&#34;, &#34;B&#34;, &#34;C&#34;, &#34;D&#34;, or &#34;F&#34;.</li>
             <li>Call that function for a few different scores and log the result to make sure it works.</li>
           </ol>
         </p>
@@ -104,10 +104,10 @@ export default function LabsList() {
           <ol>
             <li>Write a function named pluralize that:</li>
             <li> takes 2 arguments, a noun and a number.</li>
-            <li>returns the number and pluralized form, like "5 cats" or "1 dog".</li>
+            <li>returns the number and pluralized form, like &#34;5 cats&#34; or &#34;1 dog&#34;.</li>
             <li>Call that function for a few different scores and log the result to make sure it works.</li>
             <h4 className={styles['labs_header4']}>Bonus Lab</h4>
-            <li>Make it handle a few collective nouns like "sheep" and "geese".</li>
+            <li>Make it handle a few collective nouns like &#34;sheep&#34; and &#34;geese&#34;.</li>
           </ol>
         </p>
         <hr />
@@ -120,8 +120,8 @@ export default function LabsList() {
             <li>
               <strong> Read more about isNan() from w3schools.com/jsref/jsref_isnan.asp. </strong>
             </li>
-            <li>Print "Variable is not a number" if isNaN() returns true.</li>
-            <li>Else print "Variable is a valid number" if isNaN() returns false.</li>
+            <li>Print &#34;Variable is not a number&#34; if isNaN() returns true.</li>
+            <li>Else print &#34;Variable is a valid number&#34; if isNaN() returns false.</li>
           </ol>
         </p>
         <hr />
@@ -130,7 +130,7 @@ export default function LabsList() {
         <h6 className={styles['labs_header6']}>Tuesday, July 12th</h6>
         <p className={styles['labs-text']}>
           <ol>
-            <li>Function `findLargest()` finds the largest between two number by using "﹥" and "=" operator in JavaScript.</li>
+            <li>Function `findLargest()` finds the largest between two number by using &#34;﹥&#34; and &#34;=&#34; operator in JavaScript.</li>
             <li> Print num1 is the largest if num1﹥num2.</li>
             <li>Print num2 is the largest if num1﹤num2.</li>
             <li> Else print num1 and num2 are equal when num1==num2.</li>
@@ -142,7 +142,7 @@ export default function LabsList() {
         <h6 className={styles['labs_header6']}>Tuesday, July 12th</h6>
         <p className={styles['labs-text']}>
           <ol>
-            <li>Function `findLargest()` finds the largest of three number by using "﹥" and "＆＆" operator in JavaScript.</li>
+            <li>Function `findLargest()` finds the largest of three number by using &#34;﹥&#34; and &#34;＆＆&#34; operator in JavaScript.</li>
             <li> Print num1 is the largest if num1﹥num2 and num1﹥num3.</li>
             <li> Print num2 is the largest if num2﹤num3.</li>
             <li>Else print num3.</li>

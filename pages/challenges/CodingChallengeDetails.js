@@ -1,16 +1,16 @@
 import { useEffect, useState } from 'react'
 import { Card } from 'react-bootstrap'
-import { useParams } from 'react-router-dom'
-import styles from './codingChallenges.module.scss'
+// import { useParams } from 'react-router-dom'
+import styles from './Challenges.module.scss'
 export default function CodingChallengeDetails() {
   const [codingChallenge, setCodingChallenge] = useState(null)
-  const { id } = useParams()
+  // const { id } = useParams()
   useEffect(() => {
-    fetch(`https://bocacode-intranet-api.web.app/codes/${id}`)
-      .then((response) => response.json())
-      .then((promise) => setCodingChallenge(promise))
-      .catch((err) => console.log(err))
-  }, [id])
+    fetch(`https://bocacode-intranet-api.web.app/codes/`)
+      .then(response => response.json())
+      .then(promise => setCodingChallenge(promise))
+      .catch(err => console.log(err))
+  }, [])
   return (
     <div>
       {!codingChallenge ? (
