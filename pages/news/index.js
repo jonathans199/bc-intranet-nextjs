@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { Card, Modal, Button } from 'react-bootstrap'
+
+import { Hero } from './../../components/Hero'
 import AddNews from './AddNews'
 import styles from './News.module.scss'
 import Link from 'next/link'
-// import NewsArticleDetails from './[id]'
 
 export default function GetNews() {
   const [allNews, setAllNews] = useState()
@@ -23,6 +24,8 @@ export default function GetNews() {
 
   return (
     <>
+      <Hero heading='News' subHeading='Boca Code News and More' type='events' />
+
       <section className='container'>
         <Button className={styles['btn-add-article']} variant='primary' onClick={handleShow}>
           Add New Article

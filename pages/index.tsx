@@ -171,7 +171,7 @@ const Home: NextPage = () => {
         <h2>Past Contributors</h2>
         <strong>Cohort 5 - 2021:</strong>
         <br />
-        Ashley Dennis, Danielle Kom, Deyvin Cano,
+        Ashley Dennis, Danielle Kom, Deyvin Cano
       </section>
     </div>
   )
