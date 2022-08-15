@@ -1,10 +1,60 @@
 {
   "name": "bc-intranet-nextjs",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "engines": {
-    "node": "16"
+    "node": "16",
+    "npm": "7"
   },
+  "author": {
+    "name": "Jonathan Sanchez",
+    "email": "jonathans199@gmail.com",
+    "url": "www.jonsthewebguy.com"
+  },
+  "contributors": [
+    {
+      "name": "Peter Lewandowski"
+    },
+    {
+      "name": "Matthew McKney"
+    },
+    {
+      "name": "Arthur Silva"
+    },
+    {
+      "name": "Maria Bruno"
+    },
+    {
+      "name": "Ann Starovoitov"
+    },
+    {
+      "name": "Josh Philip"
+    },
+    {
+      "name": "Carlie Duperval"
+    },
+    {
+      "name": "Ludwingson Morisseau"
+    },
+    {
+      "name": "Neil Bennett"
+    },
+    {
+      "name": "Miguel Gomez"
+    },
+    {
+      "name": "Anneer Fidalgo"
+    },
+    {
+      "name": "Ashley Dennis"
+    },
+    {
+      "name": "Danielle Kom"
+    },
+    {
+      "name": "Deyvin Cano"
+    }
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
