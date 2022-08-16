@@ -60,11 +60,13 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "preinstall": "npx npm-force-resolutions"
+    "preinstall": "npx npm-force-resolutions",
+    "prepare": "husky install"
   },
   "dependencies": {
     "bootstrap": "5.1.1",
     "firebase": "^9.8.1",
+    "husky": "^8.0.1",
     "next": "11.1.2",
     "npm-force-resolutions": "^0.0.10",
     "react": "17.0.2",
