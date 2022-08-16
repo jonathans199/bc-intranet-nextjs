@@ -25,10 +25,10 @@ export default function CodingChallenges() {
     <>
       <Hero heading='Code Challenges' subHeading='From 0 to Hero' type='events' />
       <Container>
-        {/* <Button variant='primary' onClick={handleShow} bsPrefix={styles['coding-challenges--button']}>
-        Add new challenge!
-      </Button> */}
-        {/*  */}
+        {/* Adds a new Coding challenge and opens the Modal */}
+        <Button variant='primary' onClick={handleShow} bsPrefix={styles['coding-challenges--button']}>
+          Add new challenge!
+        </Button>
         <div>
           <Row>
             {!allCodingChallenges ? (
