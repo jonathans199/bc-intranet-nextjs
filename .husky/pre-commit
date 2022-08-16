@@ -3,3 +3,5 @@
 
 yarn tsc
 yarn lint
+npx pretty-quick --staged
+# yarn pretty-quick
