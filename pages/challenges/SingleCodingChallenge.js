@@ -12,7 +12,7 @@ export default function SingleCodingChallenge({ codingChallenge }) {
   }
 
   return (
-    <Col md={6}>
+    <Col sm={12} md={12} lg={6}>
       {show ? (
         <CardGroup className={styles['coding-challenges--wrapper']}>
           <Card key={codingChallenge.id} className={styles['coding-challenges-card']}>
