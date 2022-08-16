@@ -90,7 +90,7 @@ export default function ImageUploader({page, gallery}: IProps) {
     // @ts-ignore
     const allFiles = e.target[0].files
 
-    Object.entries(allFiles).forEach((eachFile) => {
+    Object.entries(allFiles).forEach(eachFile => {
       // @ts-ignore
       const storageRef = ref(storage, `${page}/${eachFile[1].name}`)
       // @ts-ignore
@@ -98,18 +98,18 @@ export default function ImageUploader({page, gallery}: IProps) {
 
       uploadTask.on(
         "state_changed",
-        (snapshot) => {
+        snapshot => {
           const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100)
           setProgresspercent(progress)
         },
-        (error) => {
+        error => {
           alert(error)
         },
         async () => {
           // @ts-ignore
           const url = `https://storage.googleapis.com/marineraenelmundoflorida.appspot.com/${storageRef._location.path}`
           // @ts-ignore
-          setAllDownloadUrls((previousUrls) => [...previousUrls, url])
+          setAllDownloadUrls(previousUrls => [...previousUrls, url])
           await addInFirestore(url)
         }
       )
@@ -137,17 +137,18 @@ export default function ImageUploader({page, gallery}: IProps) {
           return (
             // @ts-ignore
             <div key={img.id} className="my-5">
-              {/* @ts-ignore */}
-
               <img
+                /* @ts-ignore */
                 key={index}
+                /* @ts-ignore */
                 src={img.thumbnail}
                 alt="uploaded file"
                 height={"100%"}
                 width={"100%"}
               />
-              {/* @ts-ignore */}
+
               <button
+                /* @ts-ignore */
                 onClick={() => deleteImg(img)}
                 style={{position: "absolute", display: "block"}}
               >
