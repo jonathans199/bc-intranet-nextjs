@@ -1,12 +1,12 @@
 {
   "printWidth": 100,
-  "bracketSpacing": false,
+  "bracketSpacing": true,
   "semi": false,
   "arrowParens": "avoid",
   "overrides": [
     {
       "files": "*.{cmp,page}",
-      "options": {"parser": "html"}
+      "options": { "parser": "html" }
     }
   ]
 }

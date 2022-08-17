@@ -1,40 +1,38 @@
-import React, { useState, useEffect } from 'react'
-import { Spinner, Button, Modal, Container, Row } from 'react-bootstrap'
+import React, { useState, useEffect } from "react"
+import { Spinner, Button, Modal, Container, Row } from "react-bootstrap"
 
-import styles from './Challenges.module.scss'
+import styles from "./Challenges.module.scss"
 
-import { Hero } from './../../components/Hero'
-import AddNewCode from './AddNewCode'
-import SingleCodingChallenge from './SingleCodingChallenge'
+import { Hero } from "./../../components/Hero"
+import AddNewCode from "./AddNewCode"
+import SingleCodingChallenge from "./SingleCodingChallenge"
 
-export default function CodingChallenges() {
-  const [allCodingChallenges, setAllCodingChallenges] = useState()
+export default function CodingChallenges({ data }) {
   const [show, setShow] = useState(false)
 
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
 
-  useEffect(() => {
-    fetch(`https://bocacode-intranet-api.web.app/codes`)
-      .then(response => response.json())
-      .then(promise => setAllCodingChallenges(promise))
-      .catch(err => console.log(err))
-  }, [])
-
   return (
     <>
-      <Hero heading='Code Challenges' subHeading='From 0 to Hero' type='events' />
+      <Hero heading="Code Challenges" subHeading="From 0 to Hero" type="events" />
       <Container>
         {/* Adds a new Coding challenge and opens the Modal */}
-        <Button variant='primary' onClick={handleShow} bsPrefix={styles['coding-challenges--button']}>
+        <Button
+          variant="primary"
+          onClick={handleShow}
+          bsPrefix={styles["coding-challenges--button"]}
+        >
           Add new challenge!
         </Button>
         <div>
           <Row>
-            {!allCodingChallenges ? (
-              <Spinner animation='border' role='status' variant='danger'></Spinner>
+            {!data ? (
+              <Spinner animation="border" role="status" variant="danger"></Spinner>
             ) : (
-              allCodingChallenges?.map(codingChallenge => <SingleCodingChallenge key={codingChallenge.id} codingChallenge={codingChallenge} />)
+              data?.map(codingChallenge => (
+                <SingleCodingChallenge key={codingChallenge.id} codingChallenge={codingChallenge} />
+              ))
             )}
           </Row>
         </div>
@@ -49,4 +47,14 @@ export default function CodingChallenges() {
       </Container>
     </>
   )
+}
+
+// This gets called on every request
+export async function getServerSideProps() {
+  // Fetch data from external API
+  const res = await fetch(`https://bocacode-intranet-api.web.app/codes`)
+  const data = await res.json()
+
+  // Pass data to the page via props
+  return { props: { data } }
 }
