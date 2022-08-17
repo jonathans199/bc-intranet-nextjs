@@ -1,66 +1,38 @@
-import React, { useState, useEffect } from 'react'
-import { Spinner, Button, Modal, Container, Row, Card, Col, CardGroup } from 'react-bootstrap'
+import React, { useState, useEffect } from "react"
+import { Spinner, Button, Modal, Container, Row } from "react-bootstrap"
 
-import styles from './Challenges.module.scss'
-import { Hero } from './../../components/Hero'
-import AddNewCode from './AddNewCode'
+import styles from "./Challenges.module.scss"
 
-function SingleCodingChallenge({ codingChallenge }) {
-  const longQuestion = codingChallenge.question
-  const [show, setShow] = useState(true)
+import { Hero } from "./../../components/Hero"
+import AddNewCode from "./AddNewCode"
+import SingleCodingChallenge from "./SingleCodingChallenge"
 
-  const limitWordsInQuestion = (question, limit) => {
-    return question.split(' ').slice(0, limit).join(' ')
-  }
-
-  return (
-    <Col md={6}>
-      {show ? (
-        <CardGroup className={styles['coding-challenges--wrapper']}>
-          <Card key={codingChallenge.id} className={styles['coding-challenges-card']}>
-            <div className={styles['coding-challenges-card--img']}></div>
-            <Card.Header className={styles['coding-challenges-card--header']}>
-              <Card.Title className={styles['coding-challenges-card--title']}>{codingChallenge.name}</Card.Title>
-              <Card.Text className={styles['coding-challenges-card--level']}>Difficulty Level: {codingChallenge.level}</Card.Text>
-            </Card.Header>
-            <Card.Body className={styles['coding-challenges-card--problem']}>
-              {longQuestion.length > 150 ? limitWordsInQuestion(longQuestion, 25) : longQuestion}
-            </Card.Body>
-          </Card>
-        </CardGroup>
-      ) : null}
-    </Col>
-  )
-}
-
-export default function CodingChallenges() {
-  const [allCodingChallenges, setAllCodingChallenges] = useState()
+export default function CodingChallenges({ data }) {
   const [show, setShow] = useState(false)
 
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
 
-  useEffect(() => {
-    fetch(`https://bocacode-intranet-api.web.app/codes`)
-      .then(response => response.json())
-      .then(promise => setAllCodingChallenges(promise))
-      .catch(err => console.log(err))
-  }, [])
-
   return (
     <>
-      <Hero heading='Code Challenges' subHeading='From 0 to Hero' type='events' />
+      <Hero heading="Code Challenges" subHeading="From 0 to Hero" type="events" />
       <Container>
-        {/* <Button variant='primary' onClick={handleShow} bsPrefix={styles['coding-challenges--button']}>
-        Add new challenge!
-      </Button> */}
-        {/*  */}
+        {/* Adds a new Coding challenge and opens the Modal */}
+        <Button
+          variant="primary"
+          onClick={handleShow}
+          bsPrefix={styles["coding-challenges--button"]}
+        >
+          Add new challenge!
+        </Button>
         <div>
           <Row>
-            {!allCodingChallenges ? (
-              <Spinner animation='border' role='status' variant='danger'></Spinner>
+            {!data ? (
+              <Spinner animation="border" role="status" variant="danger"></Spinner>
             ) : (
-              allCodingChallenges?.map(codingChallenge => <SingleCodingChallenge key={codingChallenge.id} codingChallenge={codingChallenge} />)
+              data?.map(codingChallenge => (
+                <SingleCodingChallenge key={codingChallenge.id} codingChallenge={codingChallenge} />
+              ))
             )}
           </Row>
         </div>
@@ -75,4 +47,14 @@ export default function CodingChallenges() {
       </Container>
     </>
   )
+}
+
+// This gets called on every request
+export async function getServerSideProps() {
+  // Fetch data from external API
+  const res = await fetch(`https://bocacode-intranet-api.web.app/codes`)
+  const data = await res.json()
+
+  // Pass data to the page via props
+  return { props: { data } }
 }

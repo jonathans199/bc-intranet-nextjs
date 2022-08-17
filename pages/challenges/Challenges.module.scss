@@ -1,7 +1,7 @@
 .coding-challenges--button {
   width: 200px;
   height: 60px;
-  margin: 3rem 0 3rem 1rem;
+  margin: 4rem 0 0 1rem;
   border-radius: 11px;
   background-color: #ff216c;
   color: #f5f5f5;
@@ -35,6 +35,10 @@
     color: #333;
     text-decoration: none;
     cursor: pointer;
+
+    &:hover {
+      color: inherit;
+    }
   }
 
   &--header {
@@ -47,21 +51,22 @@
   &--title {
     display: flex;
     align-items: flex-start;
-    padding-top: 0.7rem;
-    font-size: 1.875rem;
+    max-width: 250px;
+    padding-top: 0.8rem;
+    font-size: 1.5rem;
     font-weight: bold;
   }
   &--level {
     display: flex;
     justify-content: flex-end;
-    padding-top: 1.25rem;
+    padding-top: 1rem;
     color: #333;
     font-size: 1.25rem;
     font-weight: bold;
   }
   &--problem {
+    line-height: 1.4;
     font-size: 1.125em;
-    line-height: 1.25;
     font-weight: bold;
   }
 }
@@ -179,7 +184,7 @@
   }
 }
 
-@media (min-width: 460px) and (max-width: 679px) {
+@media (min-width: 540px) and (max-width: 767px) {
   .coding-challenges--button {
     width: 100%;
     margin-left: -0.01rem;

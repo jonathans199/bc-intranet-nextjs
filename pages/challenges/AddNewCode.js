@@ -1,20 +1,20 @@
-import React from 'react'
-import { Button, Form, Row, Col } from 'react-bootstrap'
-import { useState } from 'react'
+import { useState } from "react"
+import { Button, Form, Row, Col } from "react-bootstrap"
+import { firestore } from "./../../firebaseConfig"
+import { collection, addDoc } from "firebase/firestore"
 
 export default function AddNewCode({ handleClose }) {
   const [newCode, setNewCode] = useState()
-  const handleSubmit = () => {
-    fetch(`${process.env.REACT_APP_API_ENDPOINT}/codeChallenges`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(newCode),
-    })
-      .then(alert('You have successfully added a coding challenge! '))
-      .then(handleClose)
-      .catch((err) => alert(err))
+
+  const handleSubmit = async () => {
+    try {
+      const docRef = await addDoc(collection(firestore, "codeChallenges"), newCode)
+      console.log("Document written with ID: ", docRef.id)
+      handleClose()
+      window.location.reload()
+    } catch (e) {
+      console.error("Error adding document: ", e)
+    }
   }
   return (
     <>
@@ -26,7 +26,7 @@ export default function AddNewCode({ handleClose }) {
           <Form.Control
             type="text"
             name="name"
-            onChange={(event) => setNewCode({ ...newCode, name: event.target.value })}
+            onChange={event => setNewCode({ ...newCode, name: event.target.value })}
           />
         </Col>
         <Form.Label column sm={4}>
@@ -36,7 +36,7 @@ export default function AddNewCode({ handleClose }) {
           <Form.Select
             type="input"
             name="level"
-            onChange={(event) => setNewCode({ ...newCode, level: event.target.value })}
+            onChange={event => setNewCode({ ...newCode, level: event.target.value })}
           >
             <option level="Easy">Easy</option>
             <option level="Hard">Hard</option>
@@ -49,7 +49,7 @@ export default function AddNewCode({ handleClose }) {
           <Form.Control
             type="text"
             name="question"
-            onChange={(event) => setNewCode({ ...newCode, question: event.target.value })}
+            onChange={event => setNewCode({ ...newCode, question: event.target.value })}
           />
         </Col>
       </Form.Group>
