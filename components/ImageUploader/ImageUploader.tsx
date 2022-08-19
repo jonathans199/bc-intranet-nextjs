@@ -1,8 +1,8 @@
 import * as React from "react"
-import {useRouter} from "next/router"
-import {storage, firestore} from "../../firebaseConfig"
-import {collection, doc, deleteDoc, addDoc, getDoc} from "firebase/firestore"
-import {ref, uploadBytesResumable, deleteObject} from "firebase/storage"
+import { useRouter } from "next/router"
+import { storage, firestore } from "../../firebaseConfig"
+import { collection, doc, deleteDoc, addDoc, getDoc } from "firebase/firestore"
+import { ref, uploadBytesResumable, deleteObject } from "firebase/storage"
 
 import styles from "./ImageUploader.module.scss"
 export interface IProps {
@@ -16,7 +16,7 @@ interface imageProps {
   thumbnail: String
 }
 
-export default function ImageUploader({page, gallery}: IProps) {
+export default function ImageUploader({ page, gallery }: IProps) {
   const [progresspercent, setProgresspercent] = React.useState(0)
   const [allDownloadUrls, setAllDownloadUrls] = React.useState(gallery)
   const router = useRouter()
@@ -127,7 +127,7 @@ export default function ImageUploader({page, gallery}: IProps) {
       <br />
       {!allDownloadUrls && (
         <div className="outerbar">
-          <div className="innerbar" style={{width: `${progresspercent}%`}}>
+          <div className="innerbar" style={{ width: `${progresspercent}%` }}>
             {progresspercent}%
           </div>
         </div>
@@ -150,7 +150,7 @@ export default function ImageUploader({page, gallery}: IProps) {
               <button
                 /* @ts-ignore */
                 onClick={() => deleteImg(img)}
-                style={{position: "absolute", display: "block"}}
+                style={{ position: "absolute", display: "block" }}
               >
                 delete
               </button>
