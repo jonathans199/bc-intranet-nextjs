@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import { useState } from "react"
 import { Spinner, Button, Modal, Container, Row } from "react-bootstrap"
 
 import styles from "./Challenges.module.scss"
@@ -17,7 +17,6 @@ export default function CodingChallenges({ data }) {
     <>
       <Hero heading="Code Challenges" subHeading="From 0 to Hero" type="events" />
       <Container>
-        {/* Adds a new Coding challenge and opens the Modal */}
         <Button
           variant="primary"
           onClick={handleShow}
@@ -50,7 +49,7 @@ export default function CodingChallenges({ data }) {
 }
 
 // This gets called on every request
-export async function getServerSideProps() {
+export const getServerSideProps = async () => {
   // Fetch data from external API
   const res = await fetch(`https://bocacode-intranet-api.web.app/codes`)
   const data = await res.json()
