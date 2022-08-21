@@ -1,11 +1,17 @@
 import { useEffect, useState } from 'react'
-import { CardGroup, Modal, Spinner, Button, Card, Col } from 'react-bootstrap'
+import { Button, Card, CardGroup, Col, Modal, Spinner } from 'react-bootstrap'
 
 import { Hero } from '../../components/Hero'
 import AddNewForm from '../../pages/restaurants/AddNewForm'
 import styles from './Restaurant.module.scss'
 
 function SingleRestaurant({ restaurant }) {
+  let newUrl = restaurant?.menuUrl
+
+  const onClickNavigate = () => {
+    window.open(newUrl, '_blank', 'noopener, noreferrer')
+  }
+
   return (
     <div to={`/restaurant/${restaurant.id}`} className={styles['restaurant_card--link']}>
       <div>
@@ -23,10 +29,10 @@ function SingleRestaurant({ restaurant }) {
                 <Card.Body className={styles['restaurant_card--body--back']}>
                   <Card.Title className={styles['restaurant_card--back--text--back']}>{restaurant.name}</Card.Title>
                   <Card.Text className={styles['restaurant_card--back--text--address']}>{restaurant?.address || 'Restaurant Address'}</Card.Text>
-                  <Card.Text className={styles['restaurant_card--back--text--phone']}>Phone: {restaurant?.phone}</Card.Text>
-                  <Card.Text className={styles['restaurant_card--back--text--hours']}>Hours of Operation: {restaurant?.workinghours}</Card.Text>
-                  <Card.Text className={styles['restaurant_card--back--text--rating']}>Rating: {restaurant?.rating}</Card.Text>
-                  <Button className={styles['restaurant_card--back--button']}>Menu</Button>
+                  <Button onClick={onClickNavigate} className={styles['restaurant_card--back--button']}>
+                      Menu
+                    </Button>
+                    <Card.Img src={'./img/graydots.png'} className={styles['restaurant_card--back--graydots']} />
                 </Card.Body>
               </Card>
             </div>
