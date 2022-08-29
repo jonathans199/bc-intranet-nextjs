@@ -7,7 +7,8 @@ import "bootstrap/dist/css/bootstrap.min.css"
 
 import "../styles/main.scss"
 
-import Layout from "./../components/layout"
+import Layout from './../components/layout'
+import { SSRProvider } from 'react-bootstrap'
 
 export interface IUser {
   id?: string | null
@@ -35,11 +36,13 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <UserContext.Provider value={{ user, setUser }}>
-      <main>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </main>
+      <SSRProvider>
+        <main>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </main>
+      </SSRProvider>
     </UserContext.Provider>
   )
 }

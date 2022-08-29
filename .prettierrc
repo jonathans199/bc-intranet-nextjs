@@ -3,6 +3,7 @@
   "bracketSpacing": true,
   "semi": false,
   "arrowParens": "avoid",
+  "singleQuote": true,
   "overrides": [
     {
       "files": "*.{cmp,page}",
