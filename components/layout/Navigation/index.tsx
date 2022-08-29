@@ -1,13 +1,12 @@
 import { useContext, useState } from "react"
-import { app } from "../../../firebaseConfig"
 import { getAuth, signOut } from "firebase/auth"
-import styles from "./Navigation.module.scss"
-import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap"
-
+import { Navbar, Container, Nav } from "react-bootstrap"
 import { UserContext } from "../../../pages/_app"
+
 import Login from "../../Login"
 import AroundBCTab from "./Tabs/AroundBCTab"
 import StudentsAreaTab from "./Tabs/StudentsAreaTab"
+import styles from "./Navigation.module.scss"
 
 export default function Navigation() {
   // @ts-ignore
