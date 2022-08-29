@@ -1,13 +1,14 @@
-import * as React from 'react'
-import { useState, useEffect } from 'react'
-import type { AppProps } from 'next/app'
-import { app } from '../firebaseConfig'
-import { getAuth, onAuthStateChanged, User } from 'firebase/auth'
-import 'bootstrap/dist/css/bootstrap.min.css'
+import * as React from "react"
+import { useState, useEffect } from "react"
+import type { AppProps } from "next/app"
+import { app } from "../firebaseConfig"
+import { getAuth, onAuthStateChanged, User } from "firebase/auth"
+import "bootstrap/dist/css/bootstrap.min.css"
 
-import '../styles/main.scss'
+import "../styles/main.scss"
 
-import Layout from './../components/layout'
+import Layout from "./../components/layout"
+import { SSRProvider } from "react-bootstrap"
 
 export interface IUser {
   id?: string | null
@@ -35,11 +36,13 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <UserContext.Provider value={{ user, setUser }}>
-      <main>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </main>
+      <SSRProvider>
+        <main>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </main>
+      </SSRProvider>
     </UserContext.Provider>
   )
 }
