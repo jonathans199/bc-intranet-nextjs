@@ -56,7 +56,7 @@ export default function Navigation() {
                 <NavDropdown.Item href="/challenges">CODE CHALLENGES</NavDropdown.Item>
 
                 <NavDropdown.Divider />
-                <span className="mx-3 text-warning">COMMING SOON </span>
+                <span className="mx-3 text-warning">COMING SOON </span>
 
                 <NavDropdown.Item href="#">PHOTOS</NavDropdown.Item>
                 <NavDropdown.Item href="#">HOMEWORK</NavDropdown.Item>
