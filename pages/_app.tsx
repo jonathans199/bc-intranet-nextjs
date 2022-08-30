@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import type { AppProps } from 'next/app'
 import { app } from '../firebaseConfig'
 import { getAuth, onAuthStateChanged } from 'firebase/auth'
+import { SSRProvider } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import '../styles/main.scss'
@@ -35,11 +36,13 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <UserContext.Provider value={{ user, setUser }}>
-      <main>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </main>
+      <SSRProvider>
+        <main>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </main>
+      </SSRProvider>
     </UserContext.Provider>
   )
 }
