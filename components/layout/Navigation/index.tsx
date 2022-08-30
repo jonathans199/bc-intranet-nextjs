@@ -1,12 +1,12 @@
-import { useContext, useState } from "react"
-import { getAuth, signOut } from "firebase/auth"
-import { Navbar, Container, Nav } from "react-bootstrap"
-import { UserContext } from "../../../pages/_app"
+import { useContext, useState } from 'react'
+import { getAuth, signOut } from 'firebase/auth'
+import { Navbar, Container, Nav } from 'react-bootstrap'
+import { UserContext } from '../../../pages/_app'
 
-import Login from "../../Login"
-import AroundBCTab from "./Tabs/AroundBCTab"
-import StudentsAreaTab from "./Tabs/StudentsAreaTab"
-import styles from "./Navigation.module.scss"
+import AuthModal from '../../AuthModal'
+import AroundBCTab from './Tabs/AroundBCTab'
+import StudentsAreaTab from './Tabs/StudentsAreaTab'
+import styles from './Navigation.module.scss'
 
 export default function Navigation() {
   // @ts-ignore
@@ -22,9 +22,8 @@ export default function Navigation() {
 
   return (
     <div>
-      <Login openModal={openModal} setOpenModal={setOpenModal} />
-
-      <Navbar collapseOnSelect expand="lg" className={styles["navbar-custom"]}>
+      <AuthModal openModal={openModal} setOpenModal={setOpenModal} />
+      <Navbar collapseOnSelect expand="lg" className={styles['navbar-custom']}>
         <Container>
           <Navbar.Brand href="/">
             <img src="./img/bc-logo.png" alt="Boca Code logo" width="150px" />
