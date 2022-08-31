@@ -1,9 +1,10 @@
 {
   "printWidth": 100,
   "bracketSpacing": true,
+  "tabWidth": 2,
   "semi": false,
-  "arrowParens": "avoid",
   "singleQuote": true,
+  "arrowParens": "avoid",
   "overrides": [
     {
       "files": "*.{cmp,page}",
