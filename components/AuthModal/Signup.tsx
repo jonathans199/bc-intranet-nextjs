@@ -34,6 +34,7 @@ interface IFbUser {
   reloadUserInfo: string | any
   User: string
 }
+
 const initialSignUpForm: ISignUpForm = {
   email: '',
   password: '',
@@ -68,26 +69,18 @@ export const Signup = ({ setOpenModal, openModal }: IProps) => {
     // setUser(email)
   }
 
-  const handleSignup = async (
+  const handleSignup = (
     e: React.FormEvent<HTMLInputElement> | React.FormEvent<HTMLFormElement>
   ) => {
     e.preventDefault()
-    try {
-      const userCredential = await createUserWithEmailAndPassword(
-        auth,
-        signUpForm.email,
-        signUpForm.password
-      )
-      // @ts-ignore
-      await createUserDocument(userCredential.user)
-    } catch (err) {
-      if (err instanceof Error) {
-        alert(err.message)
-      } else {
-        console.log('Unexpected error', err)
-      }
-      setOpenModal(!openModal)
-    }
+
+    createUserWithEmailAndPassword(auth, signUpForm.email, signUpForm.password)
+      //@ts-ignore
+      .then(userCredential => createUserDocument(userCredential.user))
+      .catch(err => {
+        console.error(err)
+        setOpenModal(!openModal)
+      })
   }
 
   const handleSignUpForm = (e: React.FormEvent<HTMLInputElement>) => {
