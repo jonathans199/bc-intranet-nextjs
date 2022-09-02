@@ -1,16 +1,14 @@
-# BocaCode Intranet 
+# BocaCode Intranet
+
 ## Background
 
 This is a Next.js project which is the production framework for React.js using Typescript
 
 Once you've cloned the repo you will need `.env.local` which you could request from the Slack group
 
-
 To run the project locally
 
 ```bash
-npm run dev
-# or
 yarn dev
 ```
 
