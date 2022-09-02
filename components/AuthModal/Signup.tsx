@@ -90,7 +90,7 @@ export const Signup = ({ setOpenModal, openModal }: IProps) => {
 
   return (
     <Form onSubmit={(e: React.FormEvent<HTMLFormElement>) => handleSignup(e)}>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
+      <Form.Group className="mb-3" controlId="firstName">
         <Form.Label>First Name</Form.Label>
         <Form.Control
           name="firstName"
@@ -100,7 +100,7 @@ export const Signup = ({ setOpenModal, openModal }: IProps) => {
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleSignUpForm(e)}
         />
       </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
+      <Form.Group className="mb-3" controlId="lastName">
         <Form.Label>Last Name</Form.Label>
         <Form.Control
           name="lastName"
@@ -110,7 +110,7 @@ export const Signup = ({ setOpenModal, openModal }: IProps) => {
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleSignUpForm(e)}
         />
       </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
+      <Form.Group className="mb-3" controlId="cohort">
         <Form.Label>Cohort</Form.Label>
         <Form.Control
           name="cohort"
@@ -122,7 +122,7 @@ export const Signup = ({ setOpenModal, openModal }: IProps) => {
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleSignUpForm(e)}
         />
       </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
+      <Form.Group className="mb-3" controlId="email">
         <Form.Label>Email address</Form.Label>
         <Form.Control
           name="email"
