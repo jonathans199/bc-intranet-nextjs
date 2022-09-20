@@ -6,7 +6,7 @@ import { UserContext, IUser } from '../../pages/_app'
 import { Signup } from './Signup'
 import { Login } from './Login'
 
-type IProps = {
+interface IProps {
   openModal: boolean
   setOpenModal: (value: boolean) => void
   setUser?: (value: object) => void | object
