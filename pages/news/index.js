@@ -24,26 +24,35 @@ export default function GetNews() {
 
   return (
     <>
-      <Hero heading='News' subHeading='Boca Code News and More' type='events' />
+      <Hero heading="News" subHeading="Learn about NEWS of Boca Code" type="events" />
 
-      <section className='container'>
-        <Button className={styles['btn-add-article']} variant='primary' onClick={handleShow}>
+      <section className="container">
+        <Button className={styles['btn-add-article']} variant="primary" onClick={handleShow}>
           Add New Article
         </Button>
         <div>
           {!allNews ? (
             <h2 id={styles['news_header2']}>Loading...</h2>
           ) : (
-            <div>
+            //Adding container
+            <div className="news-container">
               <>
                 {allNews?.map(news => {
                   return (
                     <Link href={`/news/[id].js}`} className={styles['news-click']} key={news.id}>
-                      <div>
+                      <div className={styles['news-container']}>
+                        {/* Placeholder image */}
+                        <img
+                          className={styles['news-image']}
+                          src="https://cdn.pixabay.com/photo/2014/05/21/22/28/old-newspaper-350376_960_720.jpg"
+                          alt=""
+                        ></img>
                         <Card className={styles['news-card']}>
                           <h2 id={styles['news_header2']}>{news.title}</h2>
                           <h3 id={styles['news_header3']}>{news.author}</h3>
-                          <h6 id={styles['news_header6']}>{new Date(news.createdAt._seconds * 1000).toLocaleDateString()}</h6>
+                          <h6 id={styles['news_header6']}>
+                            {new Date(news.createdAt._seconds * 1000).toLocaleDateString()}
+                          </h6>
                           <p className={styles['news-text']}>{news.body}</p>
                         </Card>
                       </div>
