@@ -1,9 +1,9 @@
-import * as React from "react"
-import { Hero } from "../../components/Hero"
-import styles from "./Events.module.scss"
+import * as React from 'react'
+import { Hero } from '../../components/Hero'
+import styles from './Events.module.scss'
 
-import { FirebaseGet, FirestorePost } from "../../utilities/FirebaseUtils"
-import { useState } from "react"
+import { FirebaseGet, FirestorePost } from '../../utilities/FirebaseUtils'
+import { useState } from 'react'
 
 interface IProps {
   data: Object[]
@@ -14,7 +14,7 @@ const Events = ({ data }: IProps) => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLInputElement>) => {
     e.preventDefault()
-    await FirestorePost("events", newEvent)
+    await FirestorePost('events', newEvent)
 
     window.location.reload()
   }
@@ -22,8 +22,7 @@ const Events = ({ data }: IProps) => {
   return (
     <>
       <Hero heading="Events" subHeading="Boca Code Events and More" type="events" />
-
-      <section className={`${styles["events"]} container mb-5`}>
+      <section className={`${styles['events']} container mb-5`}>
         <h2>Boca Code Happy Hour - TBD</h2>
         <form action="submit">
           <label htmlFor="eventName">Event Name</label>
@@ -54,6 +53,6 @@ const Events = ({ data }: IProps) => {
 export default Events
 
 export const getServerSideProps = async () => {
-  const data = await FirebaseGet("events")
+  const data = await FirebaseGet('events')
   return { props: { data } }
 }
