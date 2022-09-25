@@ -3,7 +3,6 @@
   background-color: #ff216d;
 }
 
-//Added
 .news-container {
   display: flex;
   padding: 2%;
@@ -16,17 +15,17 @@
 
 .news-card-container {
   background-color: #ffffff;
-
+  padding: 1%;
   &:hover {
     transform: scale(1.04);
     outline-width: 6px;
-    // background: linear-gradient(-45deg, #ffbe25 0%, #7d0a79 100%);
+    background: linear-gradient(-45deg, #ffbe25 0%, #7d0a79 100%);
   }
+
   & .news-card {
     width: calc(250px + 20px);
     background-color: #ffffff;
-    margin: 20px;
-    padding: 10px;
+    padding: 1.5%;
     cursor: pointer;
     height: 100%;
     width: 100%;
@@ -130,7 +129,8 @@
 }
 
 .news-image {
-  margin-top: 5px;
+  margin-top: 0.5%;
+  margin-left: 1%;
   max-width: 50%;
   padding: 1.5%;
 
