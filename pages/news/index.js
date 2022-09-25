@@ -27,9 +27,19 @@ export default function GetNews() {
       <Hero heading="News" subHeading="Learn about NEWS of Boca Code" type="events" />
 
       <section className="container">
-        <Button className={styles['btn-add-article']} variant="primary" onClick={handleShow}>
-          Add New Article
-        </Button>
+        <div className={styles['add-article-section']}>
+          <h1 className="add-article-header">
+            There is always some interesting news to share at Boca Code!
+          </h1>
+          <p className="add-article-text">
+            Feel free to browse articles written by our students, alumni and instructors. To
+            contribute, go ahead and add your own article.{' '}
+          </p>
+          <Button className={styles['btn-add-article']} variant="primary" onClick={handleShow}>
+            Add New Article
+          </Button>
+        </div>
+        <hr />
         <div>
           {!allNews ? (
             <h2 id={styles['news_header2']}>Loading...</h2>
