@@ -34,8 +34,7 @@ export default function GetNews() {
           {!allNews ? (
             <h2 id={styles['news_header2']}>Loading...</h2>
           ) : (
-            //Adding container
-            <div className="news-container">
+            <div>
               <>
                 {allNews?.map(news => {
                   return (
@@ -47,14 +46,28 @@ export default function GetNews() {
                           src="https://cdn.pixabay.com/photo/2014/05/21/22/28/old-newspaper-350376_960_720.jpg"
                           alt=""
                         ></img>
-                        <Card className={styles['news-card']}>
+
+                        {/* <Card className={styles['news-card']}>
                           <h2 id={styles['news_header2']}>{news.title}</h2>
                           <h3 id={styles['news_header3']}>{news.author}</h3>
                           <h6 id={styles['news_header6']}>
                             {new Date(news.createdAt._seconds * 1000).toLocaleDateString()}
                           </h6>
                           <p className={styles['news-text']}>{news.body}</p>
-                        </Card>
+                        </Card> */}
+
+                        <div className={styles['news-card-container']}>
+                          <div className={styles['news-card']}>
+                            <div className="news-card-header">
+                              <h1 id={styles['news_header2']}>{news.title}</h1>
+                              <h2 id={styles['news_header3']}>{news.author}</h2>
+                              <h6 id={styles['news_header6']}>
+                                {new Date(news.createdAt._seconds * 1000).toLocaleDateString()}
+                              </h6>
+                              <p className={styles['news-text']}>{news.body}</p>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </Link>
                   )
