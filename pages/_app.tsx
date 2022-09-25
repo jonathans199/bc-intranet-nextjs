@@ -14,6 +14,8 @@ export interface IUser {
   id?: string | null
   email?: string | null
   user?: object | null
+  type?: string
+  createdAt?: string
   setUser?: (value: object) => void | object
 }
 
