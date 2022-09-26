@@ -27,14 +27,14 @@ function MyApp({ Component, pageProps }: AppProps) {
   const auth = getAuth(app)
 
   useEffect(() => {
-    // onAuthStateChanged(auth, fbUser => {
-    //   if (fbUser) {
-    //     setUser({ id: fbUser.uid, email: fbUser.email })
-    //   } else {
-    //     setUser(undefined)
-    //   }
-    // })
-  }, [])
+    onAuthStateChanged(auth, fbUser => {
+      if (fbUser) {
+        setUser({ id: fbUser.uid, email: fbUser.email })
+      } else {
+        setUser(undefined)
+      }
+    })
+  }, [user])
 
   return (
     <UserContext.Provider value={{ user, setUser }}>
