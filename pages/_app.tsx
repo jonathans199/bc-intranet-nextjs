@@ -7,7 +7,6 @@ import { SSRProvider } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import '../styles/main.scss'
-
 import Layout from './../components/layout'
 
 export interface IUser {
@@ -34,7 +33,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         setUser(undefined)
       }
     })
-  }, [auth, user])
+  }, [auth])
 
   return (
     <UserContext.Provider value={{ user, setUser }}>

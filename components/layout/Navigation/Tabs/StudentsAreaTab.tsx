@@ -17,11 +17,15 @@ export default function StudentsAreaTab() {
           <strong>Login to Access</strong>{' '}
         </span>
       )}
+
       <NavDropdown.Item href="/labs" disabled={isDisabled}>
         LABS
       </NavDropdown.Item>
       <NavDropdown.Item href="/challenges" disabled={isDisabled}>
         CODE CHALLENGES
+      </NavDropdown.Item>
+      <NavDropdown.Item href="/alumni" disabled={isDisabled}>
+        ALUMNI
       </NavDropdown.Item>
       <NavDropdown.Divider />
       <span className="mx-3 text-warning">COMING SOON </span>
