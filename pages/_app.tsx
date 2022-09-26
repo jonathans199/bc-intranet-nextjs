@@ -34,7 +34,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         setUser(undefined)
       }
     })
-  }, [user])
+  }, [auth, user])
 
   return (
     <UserContext.Provider value={{ user, setUser }}>

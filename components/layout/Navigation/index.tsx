@@ -24,7 +24,6 @@ interface ICredential {
 }
 
 export default function Navigation() {
-  // @ts-ignore
   const { user, setUser } = useContext(UserContext)
   const [openModal, setOpenModal] = useState<boolean>(false)
   const router = useRouter()
@@ -32,8 +31,6 @@ export default function Navigation() {
   const auth = getAuth()
 
   const handleSignup = async (newUser: INewUser) => {
-    console.log('newUser here => ', newUser)
-    // @ts-ignore
     const docRef = doc(firestore, 'users', newUser.uid)
     await setDoc(docRef, {
       displayName: newUser.displayName,
@@ -57,16 +54,15 @@ export default function Navigation() {
     const auth = getAuth()
     signInWithPopup(auth, provider)
       .then(result => {
-        //@ts-ignore
+        // @ts-ignore
         const credential: ICredential = GithubAuthProvider.credentialFromResult(result)
         const token = credential.accessToken
         const fbUser = result.user
-
-        //@ts-ignore
+        // @ts-ignore
         if (!checkIfUserExists(fbUser)) {
+          console.log('fbUser here ->', fbUser)
           // @ts-ignore
           setUser(fbUser)
-          // localStorage.setItem('token', token)
           // @ts-ignore
           handleSignup(fbUser)
         } else {
@@ -82,14 +78,14 @@ export default function Navigation() {
         const email = error.customData.email
         // The AuthCredential type that was used.
         const credential = GithubAuthProvider.credentialFromError(error)
+        alert(`${email} failed to log in, error:  ${errorMessage}`)
       })
   }
 
   const logOutUser = async () => {
     await signOut(auth)
-    localStorage.clear()
-    window.location.reload()
     router.push('/')
+    window.location.reload()
   }
 
   return (
