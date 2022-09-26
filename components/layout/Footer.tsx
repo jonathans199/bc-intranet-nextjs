@@ -9,47 +9,49 @@ export default function Footer() {
           <img src="./img/bc-logo-white.png" alt="Boca Code Logo in white" />
         </div>
         <div className={styles['sub_footer_link_container']}>
-          <div className={styles['footer_link_group']}>
-            <b>Mobile app</b>
-            <ul>
-              <li>
-                <a href="#">Features</a>
-              </li>
-              <li>
-                <a href="#">Live share</a>
-              </li>
-              <li>
-                <a href="#">Video record</a>
-              </li>
-            </ul>
-          </div>
-          <div className={styles['footer_link_group']}>
-            <b>Community</b>
-            <ul>
-              <li>
-                <a href="#">Features</a>
-              </li>
-              <li>
-                <a href="#">Live share</a>
-              </li>
-              <li>
-                <a href="#">Video record</a>
-              </li>
-            </ul>
-          </div>
-          <div className={styles['footer_link_group']}>
-            <b>Company</b>
-            <ul>
-              <li>
-                <a href="#">Features</a>
-              </li>
-              <li>
-                <a href="#">Live share</a>
-              </li>
-              <li>
-                <a href="#">Video record</a>
-              </li>
-            </ul>
+          <div className={styles['footer_links']}>
+            <div className={styles['footer_link_group']}>
+              <b>Mobile app</b>
+              <ul>
+                <li>
+                  <a href="#">Features</a>
+                </li>
+                <li>
+                  <a href="#">Live share</a>
+                </li>
+                <li>
+                  <a href="#">Video record</a>
+                </li>
+              </ul>
+            </div>
+            <div className={styles['footer_link_group']}>
+              <b>Community</b>
+              <ul>
+                <li>
+                  <a href="#">Features</a>
+                </li>
+                <li>
+                  <a href="#">Live share</a>
+                </li>
+                <li>
+                  <a href="#">Video record</a>
+                </li>
+              </ul>
+            </div>
+            <div className={styles['footer_link_group']}>
+              <b>Company</b>
+              <ul>
+                <li>
+                  <a href="#">Features</a>
+                </li>
+                <li>
+                  <a href="#">Live share</a>
+                </li>
+                <li>
+                  <a href="#">Video record</a>
+                </li>
+              </ul>
+            </div>
           </div>
           <div className={styles['footer_btn_group']}>
             <button type="button" className={'btn ' + styles['btn-pink']}>

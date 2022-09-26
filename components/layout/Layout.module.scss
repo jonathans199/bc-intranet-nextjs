@@ -22,7 +22,11 @@
     display: flex;
     gap: 2.5rem;
 
-    @media screen and (max-width: 735px) {
+    @media screen and (max-width: 880px) {
+      justify-content: space-around;
+    }
+
+    @media screen and (max-width: 665px) {
       flex-direction: column;
     }
   }
@@ -50,6 +54,20 @@
     border-right: 0em;
     border-top: 0em;
     border-bottom: 0em;
+  }
+
+  & .footer_links {
+    display: flex;
+    flex-grow: 1;
+    gap: 2.5rem;
+
+    @media screen and (max-width: 665px) {
+      justify-content: space-between;
+    }
+
+    @media screen and (max-width: 430px) {
+      flex-direction: column;
+    }
   }
 
   & .footer_link_group {
