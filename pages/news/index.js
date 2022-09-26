@@ -68,12 +68,23 @@ export default function GetNews() {
 
                       <div className={styles['news-card-container']}>
                         <div className={styles['news-card']}>
+                          <div className={styles['news-title-date-container']}>
+                            <div className={styles['news-title-container']}>
+                              {/* <h1 id={styles['news_header2']}>{news.title}</h1> */}
+                            </div>
+                            <div className={styles['news-inner-triangle']}>
+                              <div className={styles['news-date']}>
+                                {new Date(news.createdAt._seconds * 1000).toLocaleDateString()}
+                              </div>
+                            </div>
+                          </div>
+
                           <div className="news-card-header">
                             <h1 id={styles['news_header2']}>{news.title}</h1>
                             <h2 id={styles['news_header3']}>{news.author}</h2>
-                            <h6 id={styles['news_header6']}>
+                            {/* <h6 id={styles['news_header6']}>
                               {new Date(news.createdAt._seconds * 1000).toLocaleDateString()}
-                            </h6>
+                            </h6> */}
                             <p className={styles['news-text']}>{news.body}</p>
                           </div>
                           <footer className={styles['news-card-footer']}>
