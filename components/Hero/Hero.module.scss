@@ -69,20 +69,47 @@
 
 .hero-news {
   @include hero-styles;
-  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 0%, transparent 70%),
+  background-image: linear-gradient(
+      105deg,
+      rgba(255, 255, 255, 0.9) 0%,
+      rgba(255, 255, 255, 0.9) 0%,
+      transparent 70%
+    ),
     url('/img/sponsors-bk.jpeg');
 }
 
 .hero-events {
   @include hero-styles;
   background-position-y: 80%;
-  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 0%, transparent 70%),
+  background-image: linear-gradient(
+      105deg,
+      rgba(255, 255, 255, 0.9) 0%,
+      rgba(255, 255, 255, 0.9) 0%,
+      transparent 70%
+    ),
     url('https://www.techlondonadvocates.org.uk/wp-content/uploads/2018/04/TLA_WEBDESIGN_EVENTS-BANNER.jpg');
 }
 
 .hero-restaurants {
   @include hero-styles;
   // background-position-y: 80%;
-  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 0%, transparent 70%),
-  url('/img/restaurants-bk.jpeg');
+  background-image: linear-gradient(
+      105deg,
+      rgba(255, 255, 255, 0.9) 0%,
+      rgba(255, 255, 255, 0.9) 0%,
+      transparent 70%
+    ),
+    url('/img/restaurants-bk.jpeg');
+}
+
+.hero-alumni {
+  @include hero-styles;
+  // background-position-y: 80%;
+  background-image: linear-gradient(
+      105deg,
+      rgba(255, 255, 255, 0.9) 0%,
+      rgba(255, 255, 255, 0.9) 0%,
+      transparent 70%
+    ),
+    url('https://bocacode.com/static/media/c7.f50efa27.jpg');
 }
