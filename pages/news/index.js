@@ -24,9 +24,14 @@ export default function GetNews() {
 
   return (
     <>
-      <Hero heading="News" subHeading="Learn about NEWS of Boca Code" type="events" />
+      <Hero
+        className={styles['news-hero']}
+        heading="News"
+        subHeading="Learn about NEWS of Boca Code"
+        type="events"
+      />
 
-      <section className="container">
+      <section className={styles['container']}>
         <div className={styles['add-article-section']}>
           <h1 className="add-article-header">
             There is always some interesting news to share at Boca Code!
@@ -52,7 +57,7 @@ export default function GetNews() {
                     <div key={news.id} className={styles['news-container']}>
                       {/* Placeholder image */}
                       <img
-                        className={styles['news-image']}
+                        className={styles[('news-image', 'slide-in')]}
                         src="https://cdn.pixabay.com/photo/2014/05/21/22/28/old-newspaper-350376_960_720.jpg"
                         alt=""
                       ></img>
@@ -66,7 +71,7 @@ export default function GetNews() {
                           <p className={styles['news-text']}>{news.body}</p>
                         </Card> */}
 
-                      <div className={styles['news-card-container']}>
+                      <div className={styles[('news-card-container', 'slide-in')]}>
                         <div className={styles['news-card']}>
                           <div className={styles['news-title-date-container']}>
                             <div className={styles['news-title-container']}>
