@@ -102,6 +102,7 @@ export default function Navigation() {
               <Nav.Link href="news">NEWS</Nav.Link>
               <Nav.Link href="events">EVENTS</Nav.Link>
               <Nav.Link href="/#links">LINKS</Nav.Link>
+              <Nav.Link href="alumni">ALUMNI</Nav.Link>
               <AroundBCTab />
               {user ? (
                 <Nav.Link onClick={logOutUser}>LOGOUT</Nav.Link>
