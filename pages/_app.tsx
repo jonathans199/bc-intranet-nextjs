@@ -7,13 +7,14 @@ import { SSRProvider } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import '../styles/main.scss'
-
 import Layout from './../components/layout'
 
 export interface IUser {
   id?: string | null
   email?: string | null
   user?: object | null
+  type?: string
+  createdAt?: string
   setUser?: (value: object) => void | object
 }
 
@@ -25,14 +26,14 @@ function MyApp({ Component, pageProps }: AppProps) {
   const auth = getAuth(app)
 
   useEffect(() => {
-    // onAuthStateChanged(auth, fbUser => {
-    //   if (fbUser) {
-    //     setUser({ id: fbUser.uid, email: fbUser.email })
-    //   } else {
-    //     setUser(undefined)
-    //   }
-    // })
-  }, [])
+    onAuthStateChanged(auth, fbUser => {
+      if (fbUser) {
+        setUser({ id: fbUser.uid, email: fbUser.email })
+      } else {
+        setUser(undefined)
+      }
+    })
+  }, [auth])
 
   return (
     <UserContext.Provider value={{ user, setUser }}>

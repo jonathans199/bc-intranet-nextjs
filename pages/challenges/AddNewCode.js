@@ -39,8 +39,6 @@ export default function AddNewCode({ handleClose }) {
             value="level"
             onChange={event => setNewCode({ ...newCode, level: event.target.value })}
           >
-            {/* <option level="Easy">Easy</option>
-            <option level="Hard">Hard</option> */}
             <option value="Easy">Easy</option>
             <option value="Hard">Hard</option>
           </Form.Select>
