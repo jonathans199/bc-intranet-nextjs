@@ -64,7 +64,7 @@
   & .boxes {
     display: flex;
     justify-content: space-between;
-    margin-top: 40px;
+    margin-top: 20px;
   }
 
   & .box-1 {
@@ -356,12 +356,15 @@
 
 .detailed-news-title {
   font-weight: 900;
-
   color: #ff216d;
 }
 
 .article-text-wrap {
   padding: 0 50px;
+}
+
+.article-text-wrap > p {
+  font-size: 20px;
 }
 
 .detailed-news-avatar img {

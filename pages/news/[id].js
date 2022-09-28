@@ -78,8 +78,8 @@ export default function NewsArticleDetails({ data }) {
               {/* <div className={styles['share-article']}>
                 <div className={styles['tags']}>Share this</div>
               </div> */}
-              <div className={styles['entry-tags']}>
-                <span className={styles['tags']}>Tags:</span>
+              <div className={styles['tags-container']}>
+                <div className={styles['tags']}>Tags:</div>
 
                 <div className={styles['news-heading-2']}>
                   <div className={styles['boxes']}>
