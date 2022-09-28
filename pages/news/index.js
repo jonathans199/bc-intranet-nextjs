@@ -61,7 +61,7 @@ export default function News({ data }) {
         className={styles['news-hero']}
         heading="News"
         subHeading="Learn about NEWS of Boca Code"
-        type="events"
+        type="news"
       />
 
       <section className={styles['container']}>

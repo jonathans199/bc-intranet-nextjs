@@ -18,7 +18,7 @@ export default function NewsArticleDetails({ data }) {
 
   return (
     <>
-      <Hero heading="News" subHeading="Info about the news " type="events" />
+      <Hero heading="News" subHeading="Happenings around Boca Code" type="news" />
       <section className={styles['detailed-news-wrapper']}>
         <div className={styles['detailed-news-container']}>
           <div className={styles['header-image']}></div>
@@ -44,7 +44,7 @@ export default function NewsArticleDetails({ data }) {
                 </div>
               </div>
             </div>
-            <div className={styles['site-main article-text-wrap']}>
+            <div className={styles['article-text-wrap']}>
               <div className={styles['news-summary']}>This is a summary of the News Article.</div>
               <p className={styles['news-first']}>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda voluptatibus
@@ -95,13 +95,13 @@ export default function NewsArticleDetails({ data }) {
         </div>
       </section>
 
-      {/* <div className="container">
+      {/* <div className='container'>
         <div className={styles['news-pic-container']}>
           <div className={styles['news-image']}>
             <hr />
             <img
-              src="https://bocacode.com/assets/images/2021.7.27-BocaCode-Web-53.png"
-              alt="Boca Code Instructors sitting in main room"
+              src='https://bocacode.com/assets/images/2021.7.27-BocaCode-Web-53.png'
+              alt='Boca Code Instructors sitting in main room'
               className={styles['news-pic']}
             />
           </div>
