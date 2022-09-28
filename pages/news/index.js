@@ -38,6 +38,8 @@ function NewsCard({ news }) {
           <p>{news.body}</p>
           <footer>
             <Link href={`/news/[id].js}`} className={styles['news-click']} key={news.id}>
+              {/* <Link href={`/news/[newsId].js`} className={styles['news-click']} key={news.id}>  */}
+              {/* <a> Read more at news/[newsId].js</a> */}
               <p>Read more</p>
             </Link>
           </footer>
