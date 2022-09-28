@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './Alumni.module.scss'
 import Link from 'next/link'
+import Image from 'next/image'
 
 function AlumniCard({ id, selectedCardId, image, name, link, about, linkedin, hired, slug }) {
   const selection = selectedCardId ? { display: id === selectedCardId ? 'block' : 'none' } : {}
@@ -8,21 +9,23 @@ function AlumniCard({ id, selectedCardId, image, name, link, about, linkedin, hi
   return (
     <div style={selection}>
       <div className={`${styles['team-card']}`}>
-        <img
+        <Image
           className={`${styles['team-image']}`}
+          width="284px"
+          height="200px"
           src={`https://bocacode.com/assets/images/candidates/${slug}.png`}
           alt={name}
         />
         <div className="team-image-hover">
-          {/* <img
-            className={`${styles["team-overlay-img"]}`}
+          {/* <Image
+            className={`${styles["team-overlay-Image"]}`}
             src="/assets/images/team/team-overlay.png"
             alt="overlay"
           /> */}
           {/* <div className={`${styles['team-links-container']}`}>
             {linkedin && (
               <a className="team-link" href={linkedin} target="_blank" rel="noopener noreferrer">
-                <img src="/assets/images/icons/linkedin.svg" alt="linkedin" />
+                <Image src="/assets/images/icons/linkedin.svg" alt="linkedin" />
               </a>
             )}
           </div> */}
