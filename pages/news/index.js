@@ -25,40 +25,27 @@ import { FirebaseGet } from '../../utilities/FirebaseUtils'
 
 function NewsCard({ news }) {
   return (
-    <div key={news.id} className={styles['news-container']}>
-      <img
-        className={styles['newsimage']}
-        src="https://cdn.pixabay.com/photo/2014/05/21/22/28/old-newspaper-350376_960_720.jpg"
-        alt=""
-      ></img>
-      <div className={styles['news-card-container']}>
-        {/* <div className={[styles['news-card-container'], styles['slideMe']]}> */}
-        <div className={styles['news-card']}>
-          <div className={styles['news-title-date-container']}>
-            <div className={styles['news-title-container']}>
-              <h1 id={styles['news_header2']}>{news.title}</h1>
-            </div>
-            <div className={styles['news-inner-triangle']}>
-              <div className={styles['news-date']}>
-                {/* {new Date(news.createdAt._seconds * 1000).toLocaleDateString()} */}
-                {new Date(news.createdAt).toLocaleDateString()}
-              </div>
-            </div>
-          </div>
-
-          <div className={styles['news-card-header']}>
-            <h2 id={styles['news_header3']}>{news.author}</h2>
-
-            <p className={styles['news-text']}>{news.body}</p>
-          </div>
-          <footer className={styles['news-card-footer']}>
+    <>
+      <figure className={styles['news-card']}>
+        <div>
+          <img
+            src="https://cdn.pixabay.com/photo/2014/05/21/22/28/old-newspaper-350376_960_720.jpg"
+            alt="newspaper"
+          />
+        </div>
+        <figcaption>
+          <div className={styles['date']}>{new Date(news.createdAt).toLocaleDateString()}</div>
+          <h3 id={styles['news_header2']}>{news.title}</h3>
+          <h2 id={styles['news_header3']}>{news.author}</h2>
+          <p>{news.body}</p>
+          <footer>
             <Link href={`/news/[id].js}`} className={styles['news-click']} key={news.id}>
               <p>Read more</p>
             </Link>
           </footer>
-        </div>
-      </div>
-    </div>
+        </figcaption>
+      </figure>
+    </>
   )
 }
 
@@ -90,7 +77,7 @@ export default function News({ data }) {
           </Button>
         </div>
         <hr />
-        <div>
+        <div className={styles['news-container']}>
           {/* {!allNews ? ( */}
 
           {!data ? (
