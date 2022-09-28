@@ -19,7 +19,7 @@ export default function NewsArticleDetails({ data }) {
   return (
     <>
       <Hero heading="News" subHeading="Info about the news " type="events" />
-      <section>
+      <section className={styles['detailed-news-wrapper']}>
         <div className={styles['detailed-news-container']}>
           <div className={styles['header-image']}></div>
           <div className={styles['article-content']}>

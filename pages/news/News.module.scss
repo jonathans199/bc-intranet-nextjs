@@ -307,19 +307,14 @@
   background-size: cover;
 }
 
-@media (min-width: 768px) {
-  .site-main {
-    width: 80%;
+@media (max-width: 850px) {
+  .detailed-news-container {
+    margin: 10px;
   }
 }
-@media (min-width: 992px) {
-  .site-main {
-    width: 70%;
-  }
-}
-@media (min-width: 1200px) {
-  .site-main {
-    width: 50%;
+@media (max-width: 1200px) {
+  .detailed-news-wrapper {
+    margin-top: 160px;
   }
 }
 
