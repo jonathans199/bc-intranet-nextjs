@@ -3,6 +3,7 @@ import { storage, firestore } from '../../firebaseConfig'
 import { ref, getDownloadURL, uploadBytesResumable } from 'firebase/storage'
 import { collection, addDoc, getDocs } from 'firebase/firestore'
 
+import Image from 'next/image'
 import { Hero } from '../../components/Hero'
 import styles from './Admin.module.scss'
 
@@ -71,28 +72,31 @@ export default function Admin() {
 
   return (
     <>
-      <Hero heading='Admin Dashboard' subHeading='Only for admins' type='fiesta' />
+      <Hero heading="Admin Dashboard" subHeading="Only for admins" type="fiesta" />
       <section className={`${styles['fiesta-info']} container`}>
         <h1>Admin</h1>
-        <p>Marinera en el Mundo presenta la Tradicional Fiesta del Pañuelo, cena de gala y exhibición de Campeones Club Libertad de Trujillo.</p>
-         {/* @ts-ignore */}
-        <form className='form' onSubmit={handleSubmit}>
-          <input type='file' multiple />
-          <button type='submit'>Upload</button>
+        <p>
+          Marinera en el Mundo presenta la Tradicional Fiesta del Pañuelo, cena de gala y exhibición
+          de Campeones Club Libertad de Trujillo.
+        </p>
+        {/* @ts-ignore */}
+        <form className="form" onSubmit={handleSubmit}>
+          <input type="file" multiple />
+          <button type="submit">Upload</button>
         </form>
         {!allDownloadUrls && (
-          <div className='outerbar'>
-            <div className='innerbar' style={{ width: `${progresspercent}%` }}>
+          <div className="outerbar">
+            <div className="innerbar" style={{ width: `${progresspercent}%` }}>
               {progresspercent}%
             </div>
           </div>
         )}
       </section>
       images here
-      {images?.map((img:String, index) => {
+      {images?.map((img: String, index) => {
         console.log('ieach img', img)
         // @ts-ignore
-        return <img key={index} src={img} alt='uploaded file' height={200} width={200} />
+        return <Image key={index} src={img} alt="uploaded file" height={200} width={200} />
       })}
     </>
   )
