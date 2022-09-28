@@ -28,10 +28,8 @@ function NewsCard({ news }) {
     <>
       <figure className={styles['news-card']}>
         <div>
-          <img
-            src="https://cdn.pixabay.com/photo/2014/05/21/22/28/old-newspaper-350376_960_720.jpg"
-            alt="newspaper"
-          />
+          {/* Placeholder image */}
+          <img src="https://bocacode.com/assets/images/laptop.jpg" alt="newspaper" />
         </div>
         <figcaption>
           <div className={styles['date']}>{new Date(news.createdAt).toLocaleDateString()}</div>
@@ -102,6 +100,6 @@ export default function News({ data }) {
 
 export const getServerSideProps = async () => {
   const data = await FirebaseGet('news')
-  console.log({ data })
+  // console.log({ data })
   return { props: { data } }
 }
