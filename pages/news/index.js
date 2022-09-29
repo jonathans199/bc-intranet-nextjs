@@ -1,27 +1,11 @@
-import React, { useState, useEffect } from 'react'
-import { Card, Modal, Button } from 'react-bootstrap'
+import React, { useState } from 'react'
+import { Modal, Button } from 'react-bootstrap'
 
-import { Hero } from './../../components/Hero'
+import { Hero } from '../../components/Hero'
 import AddNews from './AddNews'
 import styles from './News.module.scss'
 import Link from 'next/link'
 import { FirebaseGet } from '../../utilities/FirebaseUtils'
-
-// export default function GetNews() {
-//   const [allNews, setAllNews] = useState()
-//   const [show, setShow] = useState()
-//   const handleClose = () => setShow(false)
-//   const handleShow = () => setShow(true)
-
-//   useEffect(() => {
-//     fetch(`https://bocacode-intranet-api.web.app/news`)
-//       .then(response => response.json())
-//       .then(data => {
-//         // data = data?.sort((a, b) => b.timestamp - a.timestamp)
-//         setAllNews(data)
-//       })
-//       .catch(err => console.log(err))
-//   }, [])
 
 function NewsCard({ news }) {
   return (
@@ -38,8 +22,6 @@ function NewsCard({ news }) {
           <p>{news.body}</p>
           <footer>
             <Link href={`/news/[id].js}`} className={styles['news-click']} key={news.id}>
-              {/* <Link href={`/news/[newsId].js`} className={styles['news-click']} key={news.id}>  */}
-              {/* <a> Read more at news/[newsId].js</a> */}
               <p>Read more</p>
             </Link>
           </footer>
@@ -78,8 +60,6 @@ export default function News({ data }) {
         </div>
         <hr />
         <div className={styles['news-container']}>
-          {/* {!allNews ? ( */}
-
           {!data ? (
             <h2 id={styles['news_header2']}>Loading...</h2>
           ) : (
