@@ -100,6 +100,7 @@ export default function Navigation() {
             <Nav>
               <Nav.Link href="/#about">ABOUT</Nav.Link>
               <Nav.Link href="news">NEWS</Nav.Link>
+              <Nav.Link href="jobs">JOBS</Nav.Link>
               <Nav.Link href="events">EVENTS</Nav.Link>
               <Nav.Link href="/#links">LINKS</Nav.Link>
               <Nav.Link href="alumni">ALUMNI</Nav.Link>
